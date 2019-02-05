@@ -3,7 +3,7 @@
 }
 
 a {
-    color: orange;
+    color: #b7a57a;
 }
 
 .banner {
@@ -16,11 +16,11 @@ a {
 
 body {
     /* background: linear-gradient(#BBD2C5, #536976); */
-    background: linear-gradient(#b7a57a, #b7a57a);
+    background: linear-gradient(rgb(165, 164, 167), #4b2e83);
     color: white;
     font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 footer p {
@@ -49,7 +49,16 @@ h1, h2 {
 
 h3 {
     margin-top: 1em;
+    margin-left: 0.5em;
     text-shadow: 2px 2px black;
+}
+
+h4 {
+    margin-top: 1em
+}
+
+h4, h5 {
+    /* text-align: center; */
 }
 
 /*SKIP TO CONTENT*/
@@ -84,6 +93,7 @@ h3 {
 }
 
 .main-page-image p {
+    margin: 2em;
     text-align: center;
 }
 
@@ -147,7 +157,7 @@ p {
 #triangle-bottomleft {
     width: 0;
     height: 0;
-    border-bottom: 100px solid #4b2e83;
+    border-bottom: 100px solid #b7a57a;
     border-right: 100px solid transparent;
     float: left;
 }
@@ -155,7 +165,7 @@ p {
 #triangle-bottomright {
     width: 0;
     height: 0;
-    border-bottom: 100px solid #4b2e83;
+    border-bottom: 100px solid #b7a57a;
     border-left: 100px solid transparent;
     float: right;
 }
