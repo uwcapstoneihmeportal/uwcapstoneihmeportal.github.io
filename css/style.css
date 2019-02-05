@@ -57,10 +57,11 @@ h4 {
     margin-top: 1em
 }
 
-/* h4, h5 {
-    text-align: center;
+h4, h5 {
+    text-shadow: 2px 2px black;
+    text-align: center
 } 
-*/
+
 
 /*SKIP TO CONTENT*/
 
@@ -88,13 +89,14 @@ h4 {
 .main-page-image {
     margin: auto;
     display: block;
+    max-width: 400px;
     height: 400px;
-    max-height: 500px;
+    max-height: 400px;
     overflow: hidden;
 }
 
-.main-page-image p {
-    margin: 2em;
+.team-bio {
+    padding: 0em 4em 0em 4em;
     text-align: center;
 }
 
