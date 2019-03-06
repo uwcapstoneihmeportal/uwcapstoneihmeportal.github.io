@@ -19,11 +19,6 @@ import (
 
 var bcryptCost = 13
 
-//TODO: define HTTP handler functions as described in the
-//assignment description. Remember to use your handler context
-//struct as the receiver on these functions so that you have
-//access to things like the session store and user store.
-
 //helper function that would store or remove users from trie structure.
 func storeOrRemoveFromTrie(user *users.User, trie *indexes.Trie, remove bool) {
 	names := []string{user.FirstName, user.LastName, user.UserName}
