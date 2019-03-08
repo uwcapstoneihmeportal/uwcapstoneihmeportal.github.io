@@ -27,7 +27,7 @@ const NavItemStyle = (shouldShowItems) => {
 
 const LogoStyle = {
     width: '140px',
-    // height: 'auto'
+    height: 'auto',
 }
 
 const NavigationBar = ({ shouldShowNavItems }) => (
@@ -35,7 +35,6 @@ const NavigationBar = ({ shouldShowNavItems }) => (
         <a href=""><img src={logo} alt="" style={LogoStyle}/></a>
         <a href="" style={NavItemStyle(shouldShowNavItems)}>My Profile</a>
         <a href="" style={NavItemStyle(shouldShowNavItems)}>Home</a>
-        
     </nav>
 )
 
