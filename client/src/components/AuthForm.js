@@ -5,7 +5,7 @@ const ButtonStyle = {
     backgroundColor: '#26a146'
 }
 
-export class AuthForm extends Component {    
+export class AuthForm extends Component {
     render() {
         return (
             <FormGroup>
