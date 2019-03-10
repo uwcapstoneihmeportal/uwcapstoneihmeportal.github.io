@@ -1,13 +1,19 @@
-import React from 'react';
-import NavigationBar from './components/NavigationBar'
-import LoginForm from './components/LoginForm'
+import React, { Component } from 'react';
+import SignInForm from './components/AuthForm'
+
 import './App.css';
 
-const App = () => (
-  <div>
-    <NavigationBar shouldShowNavItems={ true } />
-    <LoginForm />
-  </div>
-)
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <SignInForm />
 
-export default App;
+
+
+      </div>
+    );
+  }
+}
+
+export default App
