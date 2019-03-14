@@ -43,7 +43,7 @@ class SignInView extends Component {
         this.setState({ loading: true })
 
         setTimeout(() => {
-            this.setState({ referrer: '/profile' })
+            this.setState({ referrer: '/home' })
             this.setState({ loading: false })
         }, 2 * 1000)
     }

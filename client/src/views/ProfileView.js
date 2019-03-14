@@ -46,10 +46,10 @@ class ProfileView extends Component {
                         </Row>
                     </Container>
                     <Container style={{ paddingTop: '20px', paddingBottom: '10vh' }}>
-                        <Row style={{ paddingLeft: '20%', paddingRight: '20%' }}>
+                        <Row style={{ paddingLeft: '27%', paddingRight: '20%' }}>
                             <Col>
                                 <img src={jobIcon} alt="test" style={{ height: '40px', horizontalAlign: 'middle' }} />
-                                <span style={{ paddingLeft: '10px', fontSize: '2vh' }}>Health Specialist</span>
+                                <span style={{ marginLeft: '10px', fontSize: '2vh' }}>Health Specialist</span>
                             </Col>
                             <Col >
                                 <img src={locationIcon} alt="test" style={{ height: '40px', horizontalAlign: 'middle' }} />
@@ -70,7 +70,7 @@ class ProfileView extends Component {
                                 Personal Profile
                         </NavLink>
                         </NavItem>
-                        <NavItem style={{marginRight: '400px'}}>
+                        <NavItem style={{marginRight: '600px'}}>
                             <NavLink
                                 className={classnames({ active: this.state.activeTab === '2' })}
                                 onClick={() => { this.toggle('2'); }}

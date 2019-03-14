@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 
 // import Views
 import SignInView from './views/SignInView'
-// import HomeView from './views/HomeView'
+import HomeView from './views/HomeView'
 import ProfileView from './views/ProfileView'
 
 // Style related imports
@@ -16,6 +16,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path='/' component={SignInView} />
+            <Route path='/home' component={HomeView} />
             <Route path='/profile' component={ProfileView} />
             <Redirect to='/' component={SignInView} />
           </Switch>
