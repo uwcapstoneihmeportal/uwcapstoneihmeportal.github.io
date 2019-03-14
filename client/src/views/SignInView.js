@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import { AuthForm, AuthButton } from '../components/AuthForm'
-
 import { withRouter, Redirect } from 'react-router-dom'
+
+import { DotLoader } from 'react-spinners'
+
 
 const imagePath = require('../images/placeholderTwo.jpg')
 
@@ -14,10 +16,17 @@ const imageStyle = {
 }
 
 const H1Style = {
-    marginTop: '100px',
+    marginTop: '80px',
     textAlign: 'center',
     fontSize: '32px',
     fontWeight: 'bold'
+}
+
+const loadingStyle = {
+    display: 'block',
+    margin: '0 auto',
+    marginTop: '10px',
+    marginBottom: '0'
 }
 
 class SignInView extends Component {
@@ -26,15 +35,21 @@ class SignInView extends Component {
         this.state = {
             navigate: false,
             referrer: null,
+            loading: false
         };
     }
 
     handleClick = () => {
-        this.setState({referrer: '/profile'});
+        this.setState({ loading: true })
+
+        setTimeout(() => {
+            this.setState({ referrer: '/profile' })
+            this.setState({ loading: false })
+        }, 2 * 1000)
     }
 
     render() {
-        const {referrer} = this.state;
+        const { referrer } = this.state;
         if (referrer) return <Redirect to={referrer} />;
 
         return (
@@ -45,11 +60,14 @@ class SignInView extends Component {
                             style={imageStyle} />
                     </Col>
                     <Col sm="6" >
+                        <img src={require("../images/ihme_logo.png")} alt="IHME logo" style={{ paddingTop: '10px', height: '80px' }} />
+
                         <h1 style={H1Style}>Sign in</h1>
-                        <form style={{ }}>
+                        <form style={{}}>
                             <AuthForm labelText="Email" />
                             <AuthForm type="password" labelText="Password" />
-                            <AuthButton labelText="Sign in" onClick={this.handleClick}/>
+                            <DotLoader loading={this.state.loading} color="#26a146" css={loadingStyle} />
+                            <AuthButton labelText="Sign in" onClick={this.handleClick} />
                         </form>
                     </Col>
                 </Row>

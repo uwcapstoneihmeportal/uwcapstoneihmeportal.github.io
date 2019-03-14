@@ -5,7 +5,7 @@ const ButtonStyle = {
     backgroundColor: '#26a146',
     borderRadius: '25px',
     margin: '0 auto',
-    marginTop: '100px',
+    marginTop: '80px',
     width: '85%'
 }
 
