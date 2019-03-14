@@ -2,26 +2,24 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 // import Views
-import LogInView from './views/LogInView'
-import HomeView from './views/HomeView'
-import { Provider } from 'react-redux'
+import SignInView from './views/SignInView'
+// import HomeView from './views/HomeView'
+import ProfileView from './views/ProfileView'
 
 // Style related imports
-import './App.css';
+import './styles/App.css'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Provider>
-          <Router>
-            <Switch>
-              <Route path='/' component={LogInView} />
-              <Route path='/home' component={HomeView} />
-              <Redirect to="/" />
-            </Switch>
-          </Router>
-        </Provider>
+        <Router>
+          <Switch>
+            <Route exact path='/' component={SignInView} />
+            <Route path='/profile' component={ProfileView} />
+            <Redirect to='/' component={SignInView} />
+          </Switch>
+        </Router>
       </div>
     );
   }
