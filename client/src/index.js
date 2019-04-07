@@ -7,12 +7,13 @@ import * as serviceWorker from './serviceWorker';
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { store } from './store'
+
+const store = createStore()
 
 ReactDOM.render(
 <Provider store={store} >
     <App />
-</Provider>, 
+</Provider>,
 document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
