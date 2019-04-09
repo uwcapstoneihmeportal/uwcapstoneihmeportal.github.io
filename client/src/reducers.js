@@ -31,6 +31,6 @@ function auth(state = authDefaultState, action) {
     }
 }
 
-const app = combineReducers(auth)
+const rootReducer = combineReducers({auth})
 
-export default app
+export default rootReducer

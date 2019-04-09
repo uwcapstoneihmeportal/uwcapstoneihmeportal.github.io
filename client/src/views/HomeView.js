@@ -39,12 +39,8 @@ class HomeView extends Component {
                             </div>
                         </Col>
                     </Row>
-
                 </Container>
-
-
             </div>
-
         )
     }
 }

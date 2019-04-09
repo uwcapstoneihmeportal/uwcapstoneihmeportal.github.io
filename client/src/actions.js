@@ -31,4 +31,18 @@ function loginError(message) {
         message
     }
 }
-// TODO: create action for actually making the fetch request
+
+export function loginUser(credentials) {
+    return dispatch => {
+        dispatch(requestLogin(credentials))
+
+        // go and fetch user data, save state, present it
+
+        // make sure to handle errors
+    }
+}
+
+export function logoutUser() {
+
+
+}

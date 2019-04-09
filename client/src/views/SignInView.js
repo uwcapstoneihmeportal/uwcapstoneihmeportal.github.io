@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
-import { AuthForm, AuthButton } from '../components/AuthForm'
+
+import AuthForm from '../components/AuthForm'
+import AuthButton from '../components/AuthButton'
+import LoadingIcon from '../components/LoadingIcon'
+
 import { withRouter, Redirect } from 'react-router-dom'
-
-import { DotLoader } from 'react-spinners'
-
 
 const imagePath = require('../images/placeholderTwo.jpg')
 
@@ -20,13 +21,6 @@ const H1Style = {
     textAlign: 'center',
     fontSize: '32px',
     fontWeight: 'bold'
-}
-
-const loadingStyle = {
-    display: 'block',
-    margin: '0 auto',
-    marginTop: '10px',
-    marginBottom: '0'
 }
 
 class SignInView extends Component {
@@ -63,12 +57,14 @@ class SignInView extends Component {
                         <img src={require("../images/ihme_logo.png")} alt="IHME logo" style={{ paddingTop: '10px', height: '80px' }} />
 
                         <h1 style={H1Style}>Sign in</h1>
-                        <form style={{}}>
+                        <form>
                             <AuthForm labelText="Email" />
-                            <AuthForm type="password" labelText="Password" />
-                            <DotLoader loading={this.state.loading} color="#26a146" css={loadingStyle} />
-                            <AuthButton labelText="Sign in" onClick={this.handleClick} />
+                            <AuthForm labelText="Password" type="password" />
                         </form>
+                        <div style={{ marginTop: '60px'}}>
+                            <LoadingIcon loading={this.state.loading} />
+                            <AuthButton labelText="Sign in" onClick={this.handleClick} />
+                        </div>
                     </Col>
                 </Row>
             </Container>
