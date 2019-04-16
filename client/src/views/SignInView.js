@@ -7,7 +7,7 @@ import LoadingIcon from '../components/LoadingIcon'
 
 import { withRouter, Redirect } from 'react-router-dom'
 
-const imagePath = require('../images/placeholderTwo.jpg')
+const bannerImagePath = require('../images/placeholderTwo.jpg')
 
 const imageStyle = {
     backgroundRepeat: 'no-repeat',
@@ -50,7 +50,7 @@ class SignInView extends Component {
             <Container style={{ maxWidth: '100%' }}>
                 <Row >
                     <Col sm="6" className='d-none d-sm-block' style={{ paddingLeft: '0' }}>
-                        <img src={imagePath} alt="test"
+                        <img src={bannerImagePath} alt="test"
                             style={imageStyle} />
                     </Col>
                     <Col sm="6" >
@@ -58,8 +58,8 @@ class SignInView extends Component {
 
                         <h1 style={H1Style}>Sign in</h1>
                         <form>
-                            <AuthForm labelText="Email" />
-                            <AuthForm labelText="Password" type="password" />
+                            <AuthForm labelText="Email" imagePath={require("../images/user.png")}/>
+                            <AuthForm labelText="Password" type="password" imagePath={require("../images/password.png")}/>
                         </form>
                         <div style={{ marginTop: '60px'}}>
                             <LoadingIcon loading={this.state.loading} />

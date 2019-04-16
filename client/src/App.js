@@ -15,10 +15,10 @@ class App extends Component {
       <div className="App">
         <Router>
           <Switch>
-            <Route exact path='/' component={SignInView} />
+            <Route exact path='/signin' component={SignInView} />
             <Route path='/home' component={HomeView} />
             <Route path='/profile' component={ProfileView} />
-            <Redirect to='/' component={SignInView} />
+            <Redirect to='/signin' component={SignInView} />
           </Switch>
         </Router>
       </div>
