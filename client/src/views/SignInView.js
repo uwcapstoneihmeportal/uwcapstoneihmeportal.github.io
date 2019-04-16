@@ -7,7 +7,7 @@ import LoadingIcon from '../components/LoadingIcon'
 
 import { withRouter, Redirect } from 'react-router-dom'
 
-const bannerImagePath = require('../images/placeholderTwo.jpg')
+const bannerImagePath = require('../images/login.jpg')
 
 const imageStyle = {
     backgroundRepeat: 'no-repeat',
@@ -17,7 +17,7 @@ const imageStyle = {
 }
 
 const H1Style = {
-    marginTop: '80px',
+    marginTop: '0px',
     textAlign: 'center',
     fontSize: '32px',
     fontWeight: 'bold'
@@ -27,7 +27,6 @@ class SignInView extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            navigate: false,
             referrer: null,
             loading: false
         };
@@ -53,8 +52,8 @@ class SignInView extends Component {
                         <img src={bannerImagePath} alt="test"
                             style={imageStyle} />
                     </Col>
-                    <Col sm="6" >
-                        <img src={require("../images/ihme_logo.png")} alt="IHME logo" style={{ paddingTop: '10px', height: '80px' }} />
+                    <Col sm="6" className='my-auto'>
+                        {/* <img src={require("../images/ihme_logo.png")} alt="IHME logo" style={{ paddingTop: '10px', height: '80px' }} /> */}
 
                         <h1 style={H1Style}>Sign in</h1>
                         <form>

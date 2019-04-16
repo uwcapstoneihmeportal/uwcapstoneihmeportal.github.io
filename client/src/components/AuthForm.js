@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { FormGroup, FormFeedback, Input } from 'reactstrap';
 
 const InputStyle = {
     borderRadius: '25px',
@@ -14,6 +14,10 @@ const InputStyle = {
 
 const FormGroupStyle = {
     marginTop: '30px'
+}
+
+const FormFeedbackStyle = {
+    marginLeft: '50px'
 }
 
 export default class AuthForm extends Component {
