@@ -51,17 +51,19 @@ class SignInView extends Component {
                         <img src={bannerImagePath} alt="test"
                             style={imageStyle} />
                     </Col>
-                    <Col sm="6" className="align-self-center">
-                        {/* <img src={require("../images/ihme_logo.png")} alt="IHME logo" style={{ paddingTop: '10px', height: '80px' }} /> */}
+                    <Col xs="12" sm="6">
+                        {<img src={require("../images/ihme_logo.png")} alt="IHME logo" style={{ paddingTop: '10px', height: '80px' }} />}
 
-                        <h1 style={H1Style}>Sign in</h1>
-                        <form>
-                            <AuthForm labelText="Email" imagePath={require("../images/green_user.png")}/>
-                            <AuthForm labelText="Password" type="password" imagePath={require("../images/password.png")}/>
-                        </form>
-                        <div style={{ marginTop: '60px'}}>
-                            <LoadingIcon loading={this.state.loading} />
-                            <AuthButton labelText="Sign in" onClick={this.handleClick} />
+                        <div style={{ margin: 'auto', position: 'relative', transform: 'translate(0%, 25%)' }}>
+                            <h1 style={H1Style}>Sign in</h1>
+                            <form>
+                                <AuthForm labelText="Email" imagePath={require("../images/green_user.png")}/>
+                                <AuthForm labelText="Password" type="password" imagePath={require("../images/password.png")}/>
+                            </form>
+                            <div style={{ marginTop: '60px'}}>
+                                <LoadingIcon loading={this.state.loading} />
+                                <AuthButton labelText="Sign in" onClick={this.handleClick} />
+                            </div>
                         </div>
                     </Col>
                 </Row>
