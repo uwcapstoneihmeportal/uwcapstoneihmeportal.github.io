@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import { FormGroup, FormFeedback, Input } from 'reactstrap';
 
 const InputStyle = {
-    borderRadius: '25px',
-    margin: '0 auto',
-    height: '50px',
-    width: '85%',
-    paddingLeft: '50px',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '30px',
-    backgroundPosition: '2%'
+    backgroundPosition: '2%',
+    border: '1px solid #cbe2a0',
+    boxShadow: '0 0 5px #26a146',
+    borderRadius: '25px',
+    height: '50px',
+    margin: '0 auto',
+    paddingLeft: '50px',
+    width: '85%'
 }
 
 const FormGroupStyle = {

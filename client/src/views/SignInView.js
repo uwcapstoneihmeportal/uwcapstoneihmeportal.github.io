@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
-
 import AuthForm from '../components/AuthForm'
 import AuthButton from '../components/AuthButton'
 import LoadingIcon from '../components/LoadingIcon'
-
 import { withRouter, Redirect } from 'react-router-dom'
 
 const bannerImagePath = require('../images/login.jpg')
-
-const imageStyle = {
+const bannerImageStyle = {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
     width: '100%',
@@ -20,6 +17,12 @@ const H1Style = {
     textAlign: 'center',
     fontSize: '32px',
     fontWeight: 'bold'
+}
+
+const FormContainerStyle = {
+    margin: 'auto', 
+    position: 'relative', 
+    transform: 'translate(0%, 25%)'
 }
 
 class SignInView extends Component {
@@ -49,12 +52,12 @@ class SignInView extends Component {
                 <Row>
                     <Col sm="6" className='d-none d-sm-block' style={{ paddingLeft: '0' }}>
                         <img src={bannerImagePath} alt="test"
-                            style={imageStyle} />
+                            style={bannerImageStyle} />
                     </Col>
                     <Col xs="12" sm="6">
                         {<img src={require("../images/ihme_logo.png")} alt="IHME logo" style={{ paddingTop: '10px', height: '80px' }} />}
 
-                        <div style={{ margin: 'auto', position: 'relative', transform: 'translate(0%, 25%)' }}>
+                        <div style={FormContainerStyle}>
                             <h1 style={H1Style}>Sign in</h1>
                             <form>
                                 <AuthForm labelText="Email" imagePath={require("../images/green_user.png")}/>
