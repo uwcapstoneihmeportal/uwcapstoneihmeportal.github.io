@@ -4,6 +4,14 @@ import classnames from 'classnames';
 
 import ProfileBanner from '../components/ProfileBanner'
 
+const EditProfileButtonStyle = {
+    borderRadius: '25px', 
+    border: '1px solid #26a146', 
+    backgroundColor: '#26a146', 
+    color: 'white',
+    marginBottom: '10px', 
+}
+
 class ProfileView extends Component {
     constructor(props) {
         super(props);
@@ -27,97 +35,51 @@ class ProfileView extends Component {
             <div>
                 <ProfileBanner />
 
-                <div style={{ paddingTop: '15px' }}>
-                    <Nav tabs style={{ paddingLeft: '60px', alignItems: 'center' }}>
-                        <NavItem>
-                            <NavLink
-                                className={classnames({ active: this.state.activeTab === '1' })}
-                                onClick={() => { this.toggle('1'); }}
-                            >
-                                Personal Profile
-                        </NavLink>
-                        </NavItem>
-                        <NavItem style={{marginRight: '600px'}}>
-                            <NavLink
-                                className={classnames({ active: this.state.activeTab === '2' })}
-                                onClick={() => { this.toggle('2'); }}
-                            >
-                                Publications
-                        </NavLink>
-                        </NavItem>
+                {/* <Nav tabs>
+                    <NavItem>
 
-                        <Button style={{marginBottom: '10px', borderRadius: '25px', backgroundColor: '#D8D8D8', color: 'black'}} variant="link " onClick={() => { this.toggle('3'); }}>Edit Profile</Button>                        
+                    </NavItem>
+                    <NavItem>
 
-                    </Nav>
-                    <TabContent activeTab={this.state.activeTab} style={{ paddingLeft: '60px', paddingRight: '60px', backgroundColor: '#F6F6F6' }}>
-                        <TabPane tabId="1" >
-                            <Row>
-                                <Col sm="12">
-                                    <div style={{ paddingLeft: '27px' }}>
-                                        <Row style={{ paddingTop: '30px' }}>
-                                            <h4 style={{ paddingBottom: '15px' }}>Profile</h4>
-                                            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis scelerisque lectus, id
-                                        facilisis massa. Integer nec euismod ex. Donec vel ante et lectus mollis varius. Interdum et
-                                        malesuada fames ac ante ipsum primis in faucibus. Aliquam vulputate auctor elementum. Etiam nibh ante,
-                                        tincidunt id arcu sit amet, pharetra tincidunt nisi. Praesent in pellentesque massa, eget pellentesque leo.</text>
-                                        </Row>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </TabPane>
-                        <TabPane tabId="2">
-                            <div style={{ paddingLeft: '27px' }}>
-                                <Row style={{ paddingTop: '30px' }}>
-                                    <h4 style={{ paddingBottom: '15px' }}>Publication 1 Title</h4>
-                                    <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis scelerisque lectus, id
-                                    facilisis massa. Integer nec euismod ex. Donec vel ante et lectus mollis varius. Interdum et
-                                    malesuada fames ac ante ipsum primis in faucibus. Aliquam vulputate auctor elementum. Etiam nibh ante,
-                                    tincidunt id arcu sit amet, pharetra tincidunt nisi. Praesent in pellentesque massa, eget pellentesque leo.</text>
-                                    <text style={{ textAlign: 'right', width: '100%', paddingTop: '15px' }} >Sept. 2018</text>
-                                </Row>
-                                <Row >
-                                    <h4 style={{ paddingBottom: '15px' }}>Publication 2 Title</h4>
-                                    <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis scelerisque lectus, id
-                                    facilisis massa. Integer nec euismod ex. Donec vel ante et lectus mollis varius. Interdum et
-                                    malesuada fames ac ante ipsum primis in faucibus. Aliquam vulputate auctor elementum. Etiam nibh ante,
-                                    tincidunt id arcu sit amet, pharetra tincidunt nisi. Praesent in pellentesque massa, eget pellentesque leo.</text>
-                                    <text style={{ textAlign: 'right', width: '100%', paddingTop: '15px' }} >Sept. 2018</text>
-                                </Row>
-                                <Row >
-                                    <h4 style={{ paddingBottom: '15px' }}>Publication 3 Title</h4>
-                                    <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis scelerisque lectus, id
-                                    facilisis massa. Integer nec euismod ex. Donec vel ante et lectus mollis varius. Interdum et
-                                    malesuada fames ac ante ipsum primis in faucibus. Aliquam vulputate auctor elementum. Etiam nibh ante,
-                                    tincidunt id arcu sit amet, pharetra tincidunt nisi. Praesent in pellentesque massa, eget pellentesque leo.</text>
-                                    <text style={{ textAlign: 'right', width: '100%', paddingTop: '15px' }} >Sept. 2018</text>
-                                </Row>
-                                <Row >
-                                    <h4 style={{ paddingBottom: '15px' }}>Publication 4 Title</h4>
-                                    <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis scelerisque lectus, id
-                                    facilisis massa. Integer nec euismod ex. Donec vel ante et lectus mollis varius. Interdum et
-                                    malesuada fames ac ante ipsum primis in faucibus. Aliquam vulputate auctor elementum. Etiam nibh ante,
-                                    tincidunt id arcu sit amet, pharetra tincidunt nisi. Praesent in pellentesque massa, eget pellentesque leo.</text>
-                                    <text style={{ textAlign: 'right', width: '100%', paddingTop: '15px' }} >Sept. 2018</text>
-                                </Row>
-                            </div>
-                        </TabPane>
-                        <TabPane tabId="3" >
-                            <Row>
-                                <Col sm="12">
-                                    <div style={{ paddingLeft: '27px' }}>
-                                        <Row style={{ paddingTop: '30px' }}>
-                                            <h4 style={{ paddingBottom: '15px' }}>Edit Profile</h4>
-                                            <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis scelerisque lectus, id
-                                        facilisis massa. Integer nec euismod ex. Donec vel ante et lectus mollis varius. Interdum et
-                                        malesuada fames ac ante ipsum primis in faucibus. Aliquam vulputate auctor elementum. Etiam nibh ante,
-                                        tincidunt id arcu sit amet, pharetra tincidunt nisi. Praesent in pellentesque massa, eget pellentesque leo.</text>
-                                        </Row>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </TabPane>
-                    </TabContent>
-                </div>
+                    </NavItem>
+                </Nav> */}
+
+
+                <Nav tabs style={{ paddingLeft: '60px', alignItems: 'center' }}>
+                    <NavItem>
+                        <NavLink
+                            className={classnames({ active: this.state.activeTab === '1' })}
+                            onClick={() => { this.toggle('1'); }}
+                        >
+                            Personal Profile
+                    </NavLink>
+                    </NavItem>
+                    <NavItem style={{marginRight: '600px'}}>
+                        <NavLink
+                            className={classnames({ active: this.state.activeTab === '2' })}
+                            onClick={() => { this.toggle('2'); }}
+                        >
+                            Publications
+                    </NavLink>
+                    </NavItem>
+
+                    <Button style={EditProfileButtonStyle} variant="link">
+                        Edit Profile
+                    </Button>
+                </Nav>
+                <TabContent activeTab={this.state.activeTab} style={{ paddingLeft: '60px', paddingRight: '60px', backgroundColor: '#F6F6F6' }}>
+                    <TabPane tabId="1" >
+                        <Row>
+                            <Col sm="12">
+                                
+                            </Col>
+                        </Row>
+                    </TabPane>
+                    <TabPane tabId="2">
+                        
+
+                    </TabPane>
+                </TabContent>
             </div>
         );
     }
