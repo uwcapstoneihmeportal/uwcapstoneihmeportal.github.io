@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
-import NavigationBar from '../components/NavigationBar'
 import { Container, Row, Col } from 'reactstrap'
+
+import NavigationBar from '../components/NavigationBar'
+import MissionStatement from '../components/MissionStatement'
 
 class HomeView extends Component {
     render() {
         return (
             <div>
                 <NavigationBar />
+
                 <div style={{
                     backgroundColor: '#ADD8E6',
                     height: '300px'
                 }}>
                 </div>
+
+                <MissionStatement />
+
                 <Container>
                     <Row>
                         <Col sm="12">

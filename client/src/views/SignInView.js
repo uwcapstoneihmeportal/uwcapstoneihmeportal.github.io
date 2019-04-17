@@ -17,7 +17,6 @@ const imageStyle = {
 }
 
 const H1Style = {
-    marginTop: '0px',
     textAlign: 'center',
     fontSize: '32px',
     fontWeight: 'bold'
@@ -47,17 +46,17 @@ class SignInView extends Component {
 
         return (
             <Container style={{ maxWidth: '100%' }}>
-                <Row >
+                <Row>
                     <Col sm="6" className='d-none d-sm-block' style={{ paddingLeft: '0' }}>
                         <img src={bannerImagePath} alt="test"
                             style={imageStyle} />
                     </Col>
-                    <Col sm="6" className='my-auto'>
+                    <Col sm="6" className="align-self-center">
                         {/* <img src={require("../images/ihme_logo.png")} alt="IHME logo" style={{ paddingTop: '10px', height: '80px' }} /> */}
 
                         <h1 style={H1Style}>Sign in</h1>
                         <form>
-                            <AuthForm labelText="Email" imagePath={require("../images/user.png")}/>
+                            <AuthForm labelText="Email" imagePath={require("../images/green_user.png")}/>
                             <AuthForm labelText="Password" type="password" imagePath={require("../images/password.png")}/>
                         </form>
                         <div style={{ marginTop: '60px'}}>
