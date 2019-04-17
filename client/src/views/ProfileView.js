@@ -2,21 +2,7 @@ import React, { Component } from 'react';
 import { Button, TabContent, TabPane, Nav, NavItem, NavLink, Container, Row, Col } from 'reactstrap'
 import classnames from 'classnames';
 
-const jobIcon = require('../images/job.png')
-const locationIcon = require('../images/location.png')
-
-const info = {
-    textAlign: 'center',
-    width: '100%',
-}
-
-const style = {
-    display: 'block',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '..',
-    height: '..'
-}
+import ProfileBanner from '../components/ProfileBanner'
 
 class ProfileView extends Component {
     constructor(props) {
@@ -24,7 +10,7 @@ class ProfileView extends Component {
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-            activeTab: '2'
+            activeTab: '1'
         };
     }
 
@@ -39,26 +25,7 @@ class ProfileView extends Component {
     render() {
         return (
             <div>
-                <div style={{ backgroundColor: '#D8D8D8' }}>
-                    <Container style={{ paddingTop: '12vh' }}>
-                        <Row>
-                            <h1 style={{ textAlign: 'center', width: '100%' }}>Sam Johnson</h1>
-                        </Row>
-                    </Container>
-                    <Container style={{ paddingTop: '20px', paddingBottom: '10vh' }}>
-                        <Row style={{ paddingLeft: '27%', paddingRight: '20%' }}>
-                            <Col>
-                                <img src={jobIcon} alt="test" style={{ height: '40px', horizontalAlign: 'middle' }} />
-                                <span style={{ marginLeft: '10px', fontSize: '2vh' }}>Health Specialist</span>
-                            </Col>
-                            <Col >
-                                <img src={locationIcon} alt="test" style={{ height: '40px', horizontalAlign: 'middle' }} />
-                                <span style={{ paddingLeft: '10px', fontSize: '2vh' }}>United States, WA</span>
-                            </Col>
-                        </Row>
-                    </Container>
-                </div>
-
+                <ProfileBanner />
 
                 <div style={{ paddingTop: '15px' }}>
                     <Nav tabs style={{ paddingLeft: '60px', alignItems: 'center' }}>
@@ -75,7 +42,7 @@ class ProfileView extends Component {
                                 className={classnames({ active: this.state.activeTab === '2' })}
                                 onClick={() => { this.toggle('2'); }}
                             >
-                                Publication
+                                Publications
                         </NavLink>
                         </NavItem>
 
