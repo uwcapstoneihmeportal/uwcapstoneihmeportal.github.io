@@ -22,7 +22,7 @@ func NewMySQLStore(db *sql.DB) MySQLStore {
 func ParseRows(row *sql.Row) (*User, error) {
 	var user User
 	err := row.Scan(&user.UserID, &user.Email, &user.UserName, &user.PassHash,
-		&user.FirstName, &user.LastName, &user.PhotoURL)
+		&user.FirstName, &user.LastName)
 	if err != nil {
 		if err != sql.ErrNoRows{
 			return nil, errors.New(fmt.Sprintf("error scanning a row: %v\n", err))
@@ -94,7 +94,7 @@ func (s *MySQLStore) GetByUserName(username string) (*User, error) {
 
 func (s *MySQLStore) Insert(user *User) (*User, error) {
 	insertQuery := "insert into users(email, username, passHash, firstName, lastName, photoUrl) values(?,?,?,?,?,?)"
-	res, err := s.db.Exec(insertQuery,user.Email, user.UserName, user.PassHash, user.FirstName, user.LastName, user.PhotoURL)
+	res, err := s.db.Exec(insertQuery,user.Email, user.UserName, user.PassHash, user.FirstName, user.LastName)
 	if err != nil {
 		return nil, errors.New(fmt.Sprintf("error inserting a new user: %v\n", err))
 	}

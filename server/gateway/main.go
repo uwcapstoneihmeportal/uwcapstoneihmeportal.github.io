@@ -99,7 +99,6 @@ func main() {
 	}
 	redisaddr := reqEnv("REDISADDR")
 	signinKey := reqEnv("SESSIONKEY")
-	summaryAddrs := reqEnv("SUMMARYADDRS")
 	messageAddrs := reqEnv("MESSAGESADDR")
 
 	if len(redisaddr) == 0 {
@@ -138,7 +137,6 @@ func main() {
 	newMux.Handle("/v1/channels/", handlers.NewCorsHandler(NewServiceProxy(messageAddrs, store, signinKey)))
 	newMux.Handle("/v1/channels", handlers.NewCorsHandler(NewServiceProxy(messageAddrs, store, signinKey)))
 	newMux.Handle("/v1/messages/", handlers.NewCorsHandler(NewServiceProxy(messageAddrs, store, signinKey)))
-	newMux.Handle("/v1/summary", handlers.NewCorsHandler(NewServiceProxy(summaryAddrs, store, signinKey)))
 	newMux.Handle("/v1/ws", handlers.NewCorsHandler(http.HandlerFunc(ctx.WebsocketUpgradeHandler)))
 
 

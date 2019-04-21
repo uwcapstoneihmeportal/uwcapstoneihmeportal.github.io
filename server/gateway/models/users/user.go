@@ -8,10 +8,6 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-//gravatarBasePhotoURL is the base URL for Gravatar image requests.
-//See https://id.gravatar.com/site/implement/images/ for details
-const gravatarBasePhotoURL = "https://www.gravatar.com/avatar/"
-
 //bcryptCost is the default bcrypt cost to use when hashing passwords
 var bcryptCost = 13
 
@@ -23,7 +19,6 @@ type User struct {
 	UserName  string `json:"username"`
 	FirstName string `json:"firstName"`
 	LastName  string `json:"lastName"`
-	PhotoURL  string `json:"photoURL"`
 }
 
 //Credentials represents user sign-in credentials
@@ -79,7 +74,7 @@ func (nu *NewUser) Validate() error {
 }
 
 //ToUser converts the NewUser to a User, setting the
-//PhotoURL and PassHash fields appropriately
+//PassHash fields appropriately
 func (nu *NewUser) ToUser() (*User, error) {
 	//TODO: call Validate() to validate the NewUser and
 	//return any validation errors that may occur.
@@ -88,10 +83,6 @@ func (nu *NewUser) ToUser() (*User, error) {
 	//Leave the ID field as the zero-value; your Store
 	//implementation will set that field to the DBMS-assigned
 	//primary key value.
-	//Set the PhotoURL field to the Gravatar PhotoURL
-	//for the user's email address.
-	//see https://en.gravatar.com/site/implement/hash/
-	//and https://en.gravatar.com/site/implement/images/
 	err := nu.Validate()
 	if err != nil {
 		return nil, err
@@ -99,14 +90,12 @@ func (nu *NewUser) ToUser() (*User, error) {
 	processedEmail := strings.ToLower(strings.TrimSpace(nu.Email))
 	h := md5.New()
 	h.Write([]byte(processedEmail))
-	gHash := h.Sum(nil)
 	user := &User{
 		UserID: 0,
 		Email: nu.Email,
 		UserName: nu.UserName,
 		FirstName: nu.FirstName,
 		LastName: nu.LastName,
-		PhotoURL: gravatarBasePhotoURL + fmt.Sprintf("%x", gHash),
 	}
 	//TODO: also call .SetPassword() to set the PassHash
 	//field of the User to a hash of the NewUser.Password

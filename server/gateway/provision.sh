@@ -8,7 +8,6 @@ docker stop myuserstore
 docker stop devredis
 docker stop myrabbitmq
 docker stop gateway
-docker stop summaryservice
 docker stop messageservice
 
 docker system prune -f
@@ -31,11 +30,6 @@ export JAVA_MYSQL_USER=root
 docker run --name devredis -d --restart unless-stopped \
 --network kwontaeNet \
 redis
-
-docker pull taehyun123/summary
-docker run -d --name summaryservice --restart unless-stopped \
---network kwontaeNet \
-taehyun123/summary
 
 docker run -d --name myrabbitmq --restart unless-stopped \
 --network kwontaeNet \
