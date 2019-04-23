@@ -18,13 +18,13 @@ class ProfileBanner extends Component {
                 <h1>Sam Johnson</h1>
                 <div style={{ display: 'inline-block', marginRight: '10px' }}>
                     <img src={jobIcon} alt="job image icon" style={{ height: '30px', marginBottom: '5px'}} />
-                    <span style={{ marginLeft: '10px', fontSize: '3vh' }}>
+                    <span style={{ marginLeft: '5px', fontSize: '20px' }}>
                         Health Specialist
                     </span>
                 </div>
                 <div style={{ display: 'inline-block', marginLeft: '10px' }}>
                     <img src={locationIcon} alt="location image icon" style={{ height: '40px'}} />
-                    <span style={{ fontSize: '3vh' }}>
+                    <span style={{ marginLeft: '-5px', fontSize: '20px' }}>
                         United States, WA
                     </span>
                 </div>

@@ -5,7 +5,7 @@ import AuthButton from '../components/AuthButton'
 import LoadingIcon from '../components/LoadingIcon'
 import { withRouter, Redirect } from 'react-router-dom'
 
-const bannerImagePath = require('../images/login.jpg')
+const bannerImagePath = require('../images/login.png')
 const bannerImageStyle = {
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'contain',
@@ -22,7 +22,7 @@ const H1Style = {
 const FormContainerStyle = {
     margin: 'auto', 
     position: 'relative', 
-    transform: 'translate(0%, 25%)'
+    transform: 'translate(0%, 30%)'
 }
 
 class SignInView extends Component {
