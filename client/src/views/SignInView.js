@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
+import SignInBanner from '../components/SignInBanner'
 import AuthForm from '../components/AuthForm'
 import AuthButton from '../components/AuthButton'
 import LoadingIcon from '../components/LoadingIcon'
 import { withRouter, Redirect } from 'react-router-dom'
 
-const bannerImagePath = require('../images/login.png')
-const bannerImageStyle = {
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'contain',
-    width: '100%',
-    height: '100vh'
-}
+const ihme_logo = require("../images/ihme_logo.png")
 
 const H1Style = {
     textAlign: 'center',
@@ -22,7 +17,7 @@ const H1Style = {
 const FormContainerStyle = {
     margin: 'auto', 
     position: 'relative', 
-    transform: 'translate(0%, 30%)'
+    transform: 'translate(0%, 50%)'
 }
 
 class SignInView extends Component {
@@ -51,11 +46,10 @@ class SignInView extends Component {
             <Container style={{ maxWidth: '100%' }}>
                 <Row>
                     <Col sm="6" className='d-none d-sm-block' style={{ paddingLeft: '0' }}>
-                        <img src={bannerImagePath} alt="test"
-                            style={bannerImageStyle} />
+                        <SignInBanner />
                     </Col>
                     <Col xs="12" sm="6">
-                        {<img src={require("../images/ihme_logo.png")} alt="IHME logo" style={{ paddingTop: '10px', height: '80px' }} />}
+                        {<img src={ihme_logo} alt="IHME logo" className="d-sm-none d-xs-block" style={{ paddingTop: '10px', height: '80px' }} />}
 
                         <div style={FormContainerStyle}>
                             <h1 style={H1Style}>Sign in</h1>
