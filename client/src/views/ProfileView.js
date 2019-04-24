@@ -34,35 +34,17 @@ class ProfileView extends Component {
         return (
             <div>
                 <ProfileBanner />
-
-                {/* <Nav tabs>
-                    <NavItem>
-
-                    </NavItem>
-                    <NavItem>
-
-                    </NavItem>
-                </Nav> */}
-
-
                 <Nav tabs style={{ paddingLeft: '60px', alignItems: 'center' }}>
                     <NavItem>
-                        <NavLink
-                            className={classnames({ active: this.state.activeTab === '1' })}
-                            onClick={() => { this.toggle('1'); }}
-                        >
+                        <NavLink className={classnames({ active: this.state.activeTab === '1' })} onClick={() => { this.toggle('1'); }}>
                             Personal Profile
-                    </NavLink>
+                        </NavLink>
                     </NavItem>
-                    <NavItem style={{marginRight: '600px'}}>
-                        <NavLink
-                            className={classnames({ active: this.state.activeTab === '2' })}
-                            onClick={() => { this.toggle('2'); }}
-                        >
+                    <NavItem>
+                        <NavLink className={classnames({ active: this.state.activeTab === '2' })} onClick={() => { this.toggle('2'); }}>
                             Publications
-                    </NavLink>
+                        </NavLink>
                     </NavItem>
-
                     <Button style={EditProfileButtonStyle} variant="link">
                         Edit Profile
                     </Button>
