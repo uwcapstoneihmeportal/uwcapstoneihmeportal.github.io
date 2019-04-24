@@ -21,30 +21,26 @@ class HomeView extends Component {
                 <Container>
                     <Row>
                         <Col sm="12">
-                            <div style={{}}>
-                                <Row style={{ paddingTop: '30px' }}>
-                                    <h4 style={{ paddingBottom: '15px' }}>News Article</h4>
-                                    <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis scelerisque lectus, id
-                    facilisis massa. Integer nec euismod ex. Donec vel ante et lectus mollis varius. Interdum et
-                    malesuada fames ac ante ipsum primis in faucibus. Aliquam vulputate auctor elementum. Etiam nibh ante,
-                    tincidunt id arcu sit amet, pharetra tincidunt nisi. Praesent in pellentesque massa, eget pellentesque leo.</text>
-                                </Row>
-                            </div>
+                            <h4 style={{ marginTop: '30px', marginBottom: '15px' }}>Welcome to the GBD Collaborator Portal!</h4>
+                            <p>
+                                GBD collaborators are crucial for the production, analysis, and improvement of the Global Burden of Disease. 
+                                We’ve put together this page of information and resources for members of the Global Burden of Disease collaborative network.
+                            </p>     
                         </Col>
                     </Row>
                     <Row>
                         <Col sm="12">
-                            <div style={{}}>
-                                <Row style={{ paddingTop: '30px' }}>
-                                    <h4 style={{ paddingBottom: '15px' }}>Another News Article</h4>
-                                    <text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis scelerisque lectus, id
-                    facilisis massa. Integer nec euismod ex. Donec vel ante et lectus mollis varius. Interdum et
-                    malesuada fames ac ante ipsum primis in faucibus. Aliquam vulputate auctor elementum. Etiam nibh ante,
-                    tincidunt id arcu sit amet, pharetra tincidunt nisi. Praesent in pellentesque massa, eget pellentesque leo.</text>
-                                </Row>
-                            </div>
+                            <h4 style={{ marginTop: '30px', marginBottom: '15px' }}>Resources, Tools, &amp; Instructional Videos</h4>
+                            <p>
+
+
+                            </p>
                         </Col>
                     </Row>
+                    
+                    <footer style={{ marginBottom: '50px' }}>
+                        Testing
+                    </footer>
                 </Container>
             </div>
         )

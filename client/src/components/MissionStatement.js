@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 const StatementStyle = {
     backgroundColor: "#cbe2a0",
     padding: "30px 50px 30px 50px",
+    marginTop: '-75px',
     width: '60%'
 }
 
