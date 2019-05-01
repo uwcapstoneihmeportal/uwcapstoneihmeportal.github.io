@@ -37,10 +37,6 @@ class HomeView extends Component {
                             </p>
                         </Col>
                     </Row>
-                    
-                    <footer style={{ marginBottom: '50px' }}>
-                        Testing
-                    </footer>
                 </Container>
             </div>
         )
