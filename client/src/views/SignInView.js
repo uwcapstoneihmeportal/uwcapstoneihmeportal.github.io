@@ -16,8 +16,8 @@ const H1Style = {
 
 const FormContainerStyle = {
     margin: 'auto', 
-    position: 'relative', 
-    transform: 'translate(0%, 45%)'
+    position: 'absloute', 
+    transform: 'translate(0%, 50%)'
 }
 
 class SignInView extends Component {
@@ -51,6 +51,7 @@ class SignInView extends Component {
                     <Col xs="12" sm="6">
                         {<img src={ihme_logo} alt="IHME logo" className="d-sm-none d-xs-block" style={{ paddingTop: '10px', height: '80px' }} />}
 
+                    
                         <div style={FormContainerStyle}>
                             <h1 style={H1Style}>Sign in</h1>
                             <form>
