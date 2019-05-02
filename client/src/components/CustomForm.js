@@ -22,7 +22,7 @@ const FormFeedbackStyle = {
     marginLeft: '50px'
 }
 
-export default class AuthForm extends Component {
+export default class CustomForm extends Component {
     render() {
         const image = 'url(' + this.props.imagePath + ')'
 

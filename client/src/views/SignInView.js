@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 import SignInBanner from '../components/SignInBanner'
-import AuthForm from '../components/AuthForm'
+import CustomForm from '../components/CustomForm'
 import AuthButton from '../components/AuthButton'
 import LoadingIcon from '../components/LoadingIcon'
 import { withRouter, Redirect } from 'react-router-dom'
@@ -54,8 +54,8 @@ class SignInView extends Component {
                         <div style={FormContainerStyle}>
                             <h1 style={H1Style}>Sign in</h1>
                             <form>
-                                <AuthForm labelText="Email" imagePath={require("../images/green_user.png")}/>
-                                <AuthForm labelText="Password" type="password" imagePath={require("../images/password.png")}/>
+                                <CustomForm labelText="Email" imagePath={require("../images/green_user.png")}/>
+                                <CustomForm labelText="Password" type="password" imagePath={require("../images/password.png")}/>
                             </form>
                             <div style={{ marginTop: '60px'}}>
                                 <LoadingIcon loading={this.state.loading} />

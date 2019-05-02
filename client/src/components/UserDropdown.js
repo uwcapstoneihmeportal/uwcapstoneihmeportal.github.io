@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter, Redirect } from 'react-router-dom'
 
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 
@@ -24,9 +25,23 @@ const userImage = require('../images/user.png')
 const dropdownImage = require('../images/dropdown.png')
 
 class UserDropdown extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            referrer: null,
+        };
+    }
+
+    handleClick = () => {
+        this.setState({ referrer: '/profile' })
+    }
+
     render() {
+        const { referrer } = this.state;
+        if (referrer) return <Redirect to={referrer} />;
+
         return (
-            <UncontrolledDropdown style={{textAlign: 'right'}}>
+            <UncontrolledDropdown style={{textAlign: 'right', marginTop: '40px'}}>
                 <DropdownToggle style={DropdownToggleStyle}>
                     <img src={userImage} alt="image of user" style={{...BaseImageStyle}}/>
                     Welcome, Sam
@@ -36,7 +51,7 @@ class UserDropdown extends Component {
                     <DropdownItem header style={{fontSize: '20px', color: '#2F4F4F', textAlign: 'right'}}>
                         Sam Johnson
                     </DropdownItem>
-                    <DropdownItem>
+                    <DropdownItem onClick={this.handleClick}>
                         View Profile
                     </DropdownItem>
                     <DropdownItem divider />
@@ -49,4 +64,4 @@ class UserDropdown extends Component {
     }
 }
 
-export default UserDropdown
+export default withRouter(UserDropdown)
