@@ -35,14 +35,11 @@ func main() {
 		log.Fatal("Error creating force api with given credentials:", err)
 	}
 
-	//err = forceApi.Query()
-
 	addr := os.Getenv("ADDR")
 	if len(addr) == 0 {
 		addr = ":443"
 	}
 
-	//signinKey := reqEnv("SESSIONKEY")
 	ctx := handlers.NewContext(forceApi)
 
 	tlsKeyPath := os.Getenv("TLSKEY")
@@ -50,6 +47,7 @@ func main() {
 	mux := http.NewServeMux()
 	newMux := http.NewServeMux()
 	newMux.Handle("/v1/authorize", handlers.NewCorsHandler(http.HandlerFunc(ctx.Authorize)))
+	newMux.Handle("/v1/password_update", handlers.NewCorsHandler(http.HandlerFunc(ctx.PasswordUpdate)))
 	mux.Handle("/v1/", newMux)
 	log.Printf("server is listening at https://%s", addr)
 	log.Fatal(http.ListenAndServeTLS(addr, tlsCertPath, tlsKeyPath, mux))
